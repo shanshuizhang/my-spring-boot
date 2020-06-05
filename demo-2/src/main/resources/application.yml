@@ -1,0 +1,11 @@
+order:
+  pay-timeout-seconds: 120
+  create-frequency-seconds: 10
+  desc: "创建时间${order.create-frequency-seconds}"
+
+
+my-port: ${random.int}
+
+my-name: ${random.value}
+
+my-uuid: ${random.uuid}
