@@ -24,9 +24,13 @@ public class ValueCommandLineRunner implements CommandLineRunner {
     @Value("${my-port}")
     private Integer myPort;
 
+    @Value("${rpc-test}")
+    private String rpcTest;
+
     @Override
     public void run(String... args) throws Exception {
         log.info("支付超时时间：[{}]，创建时间：[{}]",payTime,createTime);
         log.info("我的名字：[{}]，我的端口：[{}]，我的UUID：[{}]",myName,myPort,myUUID);
+        log.info("rpc-test:[{}]",rpcTest);
     }
 }
