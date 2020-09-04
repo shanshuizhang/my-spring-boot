@@ -1,0 +1,23 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: log-server-demo
+
+#logging:
+#  file:
+#    name: ../logs/log-demo.log
+#  level:
+#    com.zss.demo5.Application5: debug
+#    com:
+#      zss:
+#        demo5:
+#          controller: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+debug: true

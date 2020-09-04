@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: log-server-demo-prod
+
+logging:
+  file:
+    name: ../logs/${spring.application.name}-prodfile.log

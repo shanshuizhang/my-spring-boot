@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: log-server-demo-dev
+
+logging:
+  level:
+    com:
+      zss:
+        demo5:
+          controller: debug
