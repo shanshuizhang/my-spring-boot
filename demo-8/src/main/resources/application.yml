@@ -1,0 +1,20 @@
+spring:
+  kafka:  # Kafka 配置项，对应 KafkaProperties 配置类
+    bootstrap-servers: 172.16.1.65:9092  # 指定 Kafka Broker 地址，可以设置多个，以逗号分隔
+    producer:  # Kafka Producer 配置项
+      acks: 1  # 0-不应答。1-leader 应答。all-所有 leader 和 follower 应答。
+      retries: 3  # 发送失败时，重试发送的次数
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer # 消息的 key 的序列化
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer # 消息的 value 的序列化
+    consumer:  # Kafka Consumer 配置项
+      auto-offset-reset: earliest # 设置消费者分组最初的消费进度为 earliest 。可参考博客 https://blog.csdn.net/lishuangzhe7047/article/details/74530417 理解
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer # 消息的 key 的反序列化
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer # 消息的 value 的反序列化
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.zss.kafka.message
+
+    listener:
+      missing-topics-fatal: false  # 消费监听接口监听的主题不存在时，默认会报错。所以通过设置为 false ，解决报错

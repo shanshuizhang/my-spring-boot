@@ -8,7 +8,7 @@ public class DBUtils {
 
     private static final String USER_NAME = "root";
 
-    private static final String PASSWORD = "123456";
+    private static final String PASSWORD = "root";
 
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
